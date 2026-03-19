@@ -28,115 +28,80 @@ section {
     background: rgba(0,0,0,0.6);
     padding: 30px;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 100%;
 }
 
 h1 { font-size: 3rem; margin-bottom: 10px;}
 p { font-size: 1.2rem;}
 
-.nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
+.navbar {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
     padding: 20px 10px;
-    background: rgba(0,0,0,0.7);
     transition: all 0.4s ease;
     z-index: 1000;
+}
+
+.navbar.shrink {
+    padding: 10px 10px;
+    background: rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
-    display: flex;
 }
 
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+.navbar.shrink .navbar-brand img {
+    height: 40px;
+    transition: height 0.4s ease;
 }
 
-.logo img {
-    height: 55px;
-    transition: height 0.4s ease, transform 0.4s ease;
-}
 
-.nav.shrink {
-    padding: 14px 10px;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(8px);
-}
-
-.nav.shrink .logo img{
-    padding: 8px 10px;
-    /*background: rgba(0,0,0,0.9);*/
-    height: 42px;
-    transform: scale(1);
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav-menu li {
-    margin-left: 25px;
-}
-
-.nav-menu li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.nav-menu li a:hover {
-    color: #007bff;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 25px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 100%;
-    height: 3px;
-    background: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.nav ul {
-    display:flex;
-    justify-content:center;
-    list-style:none;
-    transition: all 0.4s ease;
-    margin: 0;
-}
-
-.nav ul li {
-    /*margin: 0 15px;*/
-    margin-left: 25px;
-}
-
-.nav ul li a {
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    font-size: 1rem;
-    transition: all 0.4s ease;
-}
-
-.nav.shrink ul li a {
+.navbar.shrink .nav-link {
     font-size: 0.9rem;
+    transition: all 0.4s ease;
 }
 
-.nav ul li a:hover {
-    color: #007bff;
+/* Linki w navbarze – białe, bez podkreśleń i efektów */
+.navbar .nav-link {
+    color: white !important;
+    text-decoration: none !important;  /* usuwa podkreślenia */
+    background: transparent !important; /* usuwa przyciemnienia po kliknięciu */
+    outline: none !important;           /* usuwa focus */
+    box-shadow: none !important;        /* usuwa cień */
+    transition: none;
+    position: relative;
+    display: inline-block;/* brak efektów hover */
+    padding-bottom: 5px;
 }
+
+
+/* Pseudo-element do podkreślenia */
+.navbar .nav-link.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;           /* grubość linii */
+    bottom: 0;
+    left: 0;
+    background-color: white; /* kolor podkreślenia */
+    transition: width 0.3s ease;
+}
+
+/* Podkreślenie przy hover */
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after { /* jeśli chcesz podkreślenie też dla aktywnego linku */
+    width: 100%;
+}
+
+.navbar .nav-link:hover {
+    padding: 5px 10px;
+}
+
+/* Linki nie zmieniają koloru po kliknięciu */
+.navbar .nav-link:focus,
+.navbar .nav-link:active {
+    color: white !important;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
