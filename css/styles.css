@@ -1,6 +1,142 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     line-height: 1.6;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.section1, .section2, .section3, .section4, .section5, .section6 {
+    background-image: url('../images/tree/tree_three.png');
+}
+
+.content {
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+h1 { font-size: 3rem; margin-bottom: 10px;}
+p { font-size: 1.2rem;}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 10px;
+    background: rgba(0,0,0,0.7);
+    transition: all 0.4s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    display: flex;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 55px;
+    transition: height 0.4s ease, transform 0.4s ease;
+}
+
+.nav.shrink {
+    padding: 14px 10px;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+}
+
+.nav.shrink .logo img{
+    padding: 8px 10px;
+    /*background: rgba(0,0,0,0.9);*/
+    height: 42px;
+    transform: scale(1);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 25px;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #007bff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav ul {
+    display:flex;
+    justify-content:center;
+    list-style:none;
+    transition: all 0.4s ease;
+    margin: 0;
+}
+
+.nav ul li {
+    /*margin: 0 15px;*/
+    margin-left: 25px;
+}
+
+.nav ul li a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+}
+
+.nav.shrink ul li a {
+    font-size: 0.9rem;
+}
+
+.nav ul li a:hover {
+    color: #007bff;
 }
