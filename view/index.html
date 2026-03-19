@@ -28,14 +28,19 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
     <script src="../js/script.js" defer></script>
     <script src="../js/hamburger.js" defer></script>
+    <script src="../js/slider.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg fixed-top">
@@ -58,6 +63,7 @@
                 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">O nas</a></li>
                 <li class="nav-item"><a class="nav-link" href="#article">Artykuły</a></li>
+                <li class="nav-item"><a class="nav-link" href="#course">Kursy</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#reviews">Opinie klientów</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
@@ -70,20 +76,69 @@
 <section id="home" class="parallax section1">
     <div class="content">
         <h1>IT Blog</h1>
-        <p>Programowanie, technologie i praktyczne poradniki</p>
+        <p>
+            Witamy na naszym blogu IT – miejscu, gdzie każdy może rozwijać swoje umiejętności w programowaniu i poznawać najnowsze technologie. Oferujemy praktyczne kursy programowania, tutoriale krok po kroku, poradniki dla początkujących i zaawansowanych oraz inspirujące projekty programistów. Dzięki naszym materiałom nauka IT staje się prostsza i bardziej efektywna.
+        </p>
+        <p>
+            Zobacz gotowe portfolio developerów, poznaj przykłady projektów webowych, aplikacji i gier, i samodzielnie twórz własne. Nasze kursy programowania i poradniki pomogą Ci zdobyć doświadczenie potrzebne do pracy w branży IT i rozwoju kariery programisty. Dołącz do społeczności, ucz się nowych technologii i pokazuj swoje umiejętności światu!
+        </p>
+        <a href="#course" class="btn btn-secondary">Rozpocznij kurs</a>
+        <a href="#portfolio" class="btn btn-secondary">Zobacz portfolio</a>
     </div>
 </section>
 
 <section id="about" class="parallax section2">
     <div class="content">
-        <h1>O nas</h1>
-        <p>Tworzymy aplikacje webowe, mobilne, desktopowe, ucząc przy tym innych</p>
+        <h1>O nas – Twój partner w nauce programowania i rozwoju kariery IT</h1>
+        <p>Jesteśmy zespołem pasjonatów technologii, którzy od lat zajmują się programowaniem, tworzeniem aplikacji i dzieleniem się wiedzą. Naszym celem jest wspieranie osób, które chcą rozwijać swoje umiejętności w IT – od podstawowych kursów programowania, przez praktyczne tutoriale, aż po zaawansowane projekty developerskie.
+
+            Na naszym blogu znajdziesz rzetelne poradniki, inspirujące case studies oraz portfolio programistów, które pokazuje, jak realizować profesjonalne projekty. U nas nauka IT staje się przyjemna, efektywna i dostępna dla każdego – niezależnie od doświadczenia.
+
+            Dołącz do naszej społeczności, ucz się nowych technologii i buduj swoje portfolio z nami. Twój rozwój w świecie IT jest naszym priorytetem!</p>
     </div>
 </section>
 
 <section id="article" class="parallax section3">
+    <div class="content swiper">
+        <h1>Artykuły</h1>
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="../images/course/portfolio.png" alt="tworzenie portfolio z projektami" class="card-image">
+                        <p class="badge portfolio">Developer</p>
+                        <h2 class="crad-title">Co trzeba wiedzieć o tworzeniu portfolio?</h2>
+                        <button class="card-button material-symbols-outlined">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="../images/course/python.png" alt="tworzenie portfolio z projektami" class="card-image">
+                        <p class="badge python">Developer</p>
+                        <h2 class="crad-title">Podstawy programowania w Pythonie</h2>
+                        <button class="card-button material-symbols-outlined">arrow_forward</button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="#" class="card-link">
+                        <img src="../images/course/JavaScript.png" alt="tworzenie portfolio z projektami" class="card-image">
+                        <p class="badge javascript">Developer</p>
+                        <h2 class="crad-title">Podstawy programowania w JavaScript</h2>
+                        <button class="card-button material-symbols-outlined">arrow_forward</button>
+                    </a>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</section>
+
+<section id="course" class="parallax section3">
     <div class="content">
-        <h1>O nas</h1>
+        <h1>Kursy</h1>
         <p>Tworzymy aplikacje webowe, mobilne, desktopowe, ucząc przy tym innych</p>
     </div>
 </section>
@@ -108,5 +163,6 @@
         <p>Skontaktuj się z nami</p>
     </div>
 </section>
+
 </body>
 </html>

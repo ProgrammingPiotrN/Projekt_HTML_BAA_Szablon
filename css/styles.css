@@ -5,14 +5,27 @@ body {
     line-height: 1.6;
 }
 
-section {
-    height: 100vh;
+/*CSS do sekcji i paralxy*/
+
+.section1, .section2, .section3, .section4, .section5 {
+    padding: 100px 20px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
     color: white;
 }
+
+.section6 {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    color: white;
+}
+
 
 .parallax {
     background-attachment: fixed;
@@ -24,15 +37,70 @@ section {
     background-image: url('../images/tree/tree_three.png');
 }
 
+/*Formatowanie tekstu*/
+
 .content {
     background: rgba(0,0,0,0.6);
-    padding: 30px;
+    padding:30px 30px;
+    margin: 0 auto;
     border-radius: 10px;
-    max-width: 100%;
+    max-width: 1200px;
+    width: 100%;
+    min-height: 400px;
 }
 
 h1 { font-size: 3rem; margin-bottom: 10px;}
 p { font-size: 1.2rem;}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: justify;        /* justowanie tekstu */
+    text-justify: inter-word;   /* poprawne justowanie słów */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 4rem); text-align: center; }
+h2 { font-size: clamp(1.5rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.2rem, 3vw, 2rem); }
+
+/*Programowanie przycisku do sekcji Home*/
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background: #fff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: #111;
+}
+
+/*CSS do menu na stronie*/
 
 .navbar {
     background: rgba(0,0,0,0.6);
@@ -103,5 +171,196 @@ p { font-size: 1.2rem;}
     outline: none !important;
     box-shadow: none !important;
 }
+
+/*Slider*/
+.card-list .card-item {
+    list-style: none;
+}
+
+.card-list .card-item .card-link {
+    width: 400px;
+    display: block;
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.card-list .card-item .card-link:hover {
+    border-color: #111111;
+}
+
+.card-list .card-link .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-list .card-link .badge {
+    color: cornflowerblue;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 16px 0 18px;
+    background: #DDE4FF;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+.card-list .card-link .badge.portfolio {
+    color: darkorange;
+    background: #F7DFF5;
+}
+
+.card-list .card-link .badge.python {
+    color: cornflowerblue;
+    background: #F7DFF5;
+}
+
+.card-list .card-link .badge.javascript {
+    color: coral;
+    background: #F7DFF5;
+}
+
+.card-list .card-link .card-title {
+    font-size: 1.19rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.card-list .card-link .card-button {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    color: #5372F0;
+    border: 2px solid #5372F0;
+    background: none;
+    cursor: pointer;
+    transform: rotate(-45deg);
+}
+
+.card-list .card-link:hover .card-button {
+    color: #fff;
+    background: #5372F0;
+}
+
+.card-image {
+    width: 90%;           /* zdjęcie zajmuje 90% szerokości slide'a */
+    max-width: 400px;     /* maksymalna szerokość, desktop */
+    height: 320px;        /* wysokość dla mobile */
+    object-fit: cover;    /* zachowuje proporcje, przycina nadmiar */
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*Responsywność*/
+
+@media (min-width: 768px) {
+
+    /* Sekcje */
+    .section1, .section2, .section3, .section4, .section5, .section6 {
+        padding: 120px 40px;  /* większe odstępy na tabletach */
+        align-items: center;  /* wyśrodkowanie treści */
+    }
+
+    /* Content box */
+    .content {
+        padding: 40px 40px;
+        max-width: 900px;
+        min-height: 450px;
+    }
+
+    /* Tekst */
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 20px 20px;
+    }
+
+    .navbar .nav-link {
+        font-size: 1rem;
+        padding-bottom: 8px;
+    }
+
+    .navbar.shrink .nav-link {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .article-img {
+        width: 95%;       /* większa szerokość */
+        max-width: 500px;
+        height: 360px;
+    }
+}
+
+/* ================= DESKTOP (1200px i wyżej) ================= */
+@media (min-width: 1200px) {
+
+    /* Sekcje */
+    .section1, .section2, .section3, .section4, .section5, .section6 {
+        padding: 150px 80px;  /* większe odstępy na dużych ekranach */
+    }
+
+    /* Content box */
+    .content {
+        padding: 50px 50px;
+        max-width: 1200px;
+        min-height: 500px;
+    }
+
+    /* Tekst */
+    h1 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 25px 30px;
+    }
+
+    .navbar .nav-link {
+        font-size: 1.1rem;
+        padding-bottom: 10px;
+    }
+
+    .navbar.shrink .nav-link {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 16px 32px;
+        font-size: 1.1rem;
+    }
+
+    .article-img {
+        width: 100%;      /* zajmuje całą szerokość slide */
+        max-width: 600px;
+        height: 400px;
+    }
+}
+
+
 
 
